@@ -1,0 +1,14 @@
+h1 {
+  width: 6em;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+#app img {
+  display: block;
+  margin: auto;
+}

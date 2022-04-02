@@ -1,0 +1,23 @@
+{
+  "name": "Doocs Leetcode",
+  "description": "获取 Doocs 社区题解",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "options_page": "/options/index.html",
+  "action": {
+    "default_popup": "/popup/index.html",
+    "default_icon": {
+      "16": "/images/icon.png",
+      "32": "/images/icon.png",
+      "48": "/images/icon.png",
+      "128": "/images/icon.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icon.png",
+    "32": "/images/icon.png",
+    "48": "/images/icon.png",
+    "128": "/images/icon.png"
+  }
+}
