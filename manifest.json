@@ -3,7 +3,7 @@
   "description": "获取 Doocs 社区题解",
   "version": "1.0.0",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "permissions": ["tabs"],
   "options_page": "/options/index.html",
   "action": {
     "default_popup": "/popup/index.html",
