@@ -1,10 +1,16 @@
 import { baseUrl } from "../config/index.js";
-export const isLeetcode = (url) => url.includes("https://leetcode-cn.com/");
-export const updatePage = (() => {
+export function isLeetcode(url) {
+    return url.includes("https://leetcode-cn.com/") || url.includes("https://leetcode.cn/");
+}
+export function updatePage(href = "", readme = "") {
     const link = document.querySelector("#link");
     const list = document.querySelector("#list");
     const reg = /(?<=### \*\*)[\S\s]+?(?=\*\*)/g;
-    return (href = "", readme = "") => {
+    if (readme === "") {
+        link.href = `${baseUrl}`;
+        list.innerHTML = "";
+    }
+    else {
         link.href = `${baseUrl}/#${href}`;
         list.innerHTML = readme
             .match(reg)
@@ -14,9 +20,9 @@ export const updatePage = (() => {
             ${lang}
           </li>`)
             .join("");
-    };
-})();
-export const post = async (url) => {
+    }
+}
+export async function post(url) {
     const data = await fetch(`${baseUrl}${url}`);
     return await data.text();
-};
+}
