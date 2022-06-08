@@ -58,7 +58,11 @@ async function getSolution() {
  */
 async function render(type, code) {
   const data = await post(`/${type}/README.md`)
-  const [baseUrl] = data.match(new RegExp(`(?<=\\[${code}.{2,}?]\\().+(?=\\))`))
+  const [baseUrl] = data.match(
+    type === "solution"
+      ? new RegExp(`(?<=${code}.{2,}?]\\().+(?=\\))`)
+      : new RegExp(`(?<=\\[${code}.{2,}?]\\().+(?=\\))`)
+  )
   const readme = await post(baseUrl)
 
   updatePage(baseUrl, readme)
